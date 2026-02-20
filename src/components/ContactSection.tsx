@@ -1,0 +1,57 @@
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+
+const links = [
+  { icon: Github, href: "https://github.com/ricardorohrs", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ricardorohrs/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/ricardoerohrs", label: "Instagram" },
+  { icon: Mail, href: "mailto:rerohrs@inf.ufsm.br", label: "rerohrs@inf.ufsm.br" },
+];
+
+const ContactSection = () => {
+  return (
+    <section id="contato" className="py-24 px-6 border-t border-border">
+      <div className="max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="font-mono text-sm text-primary tracking-widest uppercase">
+            // Contato
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold font-mono mt-3 mb-6">
+            Vamos conversar<span className="text-primary">?</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mb-12">
+            Estou aberto a novas oportunidades e colaborações. Entre em contato!
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap items-center justify-center gap-4"
+        >
+          {links.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary hover:text-primary transition-all duration-300"
+            >
+              <Icon className="w-5 h-5" />
+              <span className="font-mono text-sm">{label}</span>
+            </a>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
