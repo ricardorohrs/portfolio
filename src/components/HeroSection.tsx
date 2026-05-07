@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ChevronDown, LucideGitlab } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const socials = [
   { icon: Github, href: "https://github.com/ricardorohrs", label: "GitHub" },
+  { icon: LucideGitlab, href: "https://gitlab.com/ricardoerohrs", label: "GitLab" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ricardorohrs/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:rerohrs@inf.ufsm.br", label: "Email" },
 ];

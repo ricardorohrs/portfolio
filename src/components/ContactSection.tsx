@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, LucideGitlab } from "lucide-react";
 
 const links = [
   { icon: Github, href: "https://github.com/ricardorohrs", label: "GitHub" },
+  { icon: LucideGitlab, href: "https://gitlab.com/ricardoerohrs", label: "GitLab" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ricardorohrs/", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/ricardoerohrs", label: "Instagram" },
   { icon: Mail, href: "mailto:rerohrs@inf.ufsm.br", label: "rerohrs@inf.ufsm.br" },

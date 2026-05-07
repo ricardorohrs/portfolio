@@ -45,8 +45,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-16"
         >
-          Sou um Desenvolvedor Full Stack baseado em Porto Alegre, RS. Trabalho na{" "}
-          <span className="text-foreground font-medium">Follow55</span> construindo
+          Sou Desenvolvedor Full Stack e moro em Porto Alegre, RS. Trabalho construindo
           soluções web robustas. Formado pela{" "}
           <span className="text-foreground font-medium">UFSM</span>, tenho experiência com
           diversas tecnologias e frameworks, sempre buscando criar produtos que fazem a diferença.
