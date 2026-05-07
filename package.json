@@ -10,8 +10,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://ricardorohrs.github.io/portfolio",
   "dependencies": {
     "browserslist": "^4.28.2",
     "caniuse-lite": "^1.0.30001792",
