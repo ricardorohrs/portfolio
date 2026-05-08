@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# 🚀 Portfólio — Ricardo Rohrs
 
-## Project info
+**Desenvolvedor Full Stack** | Porto Alegre, RS
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+[![Visite o Portfólio](https://img.shields.io/badge/Visite_Online-ricardorohrs.github.io%2Fportfolio-0ea5e9?style=for-the-badge)](https://ricardorohrs.github.io/portfolio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ricardorohrs)
+[![GitLab](https://img.shields.io/badge/GitLab-181717?style=for-the-badge&logo=gitlab)](https://gitlab.com/ricardoerohrs)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📖 Sobre Este Portfólio
 
-**Use Lovable**
+Este é meu portfólio profissional — uma aplicação web moderna e responsiva que apresenta meus trabalhos, habilidades técnicas e forma de contato. Desenvolvido com auxílio de inteligência artificial e com foco em performance, acessibilidade e experiência do usuário.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Características principais:**
+- ✨ Design moderno e responsivo
+- 🌙 Tema claro/escuro automático
+- 🌍 Suporte a múltiplos idiomas (PT-BR e EN)
+- ⚡ Otimizado para performance
+- ♿ Acessível (WCAG)
+- 📱 Mobile-first
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠️ Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Frontend:**
+- **React** 18 — Biblioteca para construção de UIs
+- **TypeScript** — Type safety e melhor developer experience
+- **Vite** — Build tool rápido e moderno
+- **Tailwind CSS** — Utilitários CSS para design responsivo
+- **shadcn-ui** — Componentes acessíveis e reutilizáveis
+- **Framer Motion** — Animações fluidas e intuitivas
+- **Lucide React** — Ícones vetoriais leves
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Desenvolvimento:**
+- **ESLint** — Linting e análise de código
+- **Vitest** — Framework de testes unitários
+- **GitHub Pages** — Hospedagem estática
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Feramentas:**
+- **[Lovable](https://lovable.dev)** - Desenvolvimento da ideia inicial
+- **[Cursor](https://cursor.com/pt-BR/home)** - Otimização do código e ajustes de design
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📂 Estrutura do Projeto
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
+src/
+├── components/          # Componentes React reutilizáveis
+│   ├── Navbar.tsx
+│   ├── HeroSection.tsx
+│   ├── AboutSection.tsx
+│   ├── SkillsSection.tsx
+│   ├── ProjectsSection.tsx
+│   ├── ContactSection.tsx
+│   └── Footer.tsx
+├── i18n/               # Sistema de internacionalização
+│   ├── context.ts
+│   ├── I18nProvider.tsx
+│   └── translations.ts
+├── theme/              # Sistema de temas (light/dark)
+├── pages/              # Páginas da aplicação
+├── App.tsx
+└── main.tsx
+```
+---
 
-**Edit a file directly in GitHub**
+## 🎯 Seções do Portfólio
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Hero** — Apresentação inicial com chamada à ação
+- **Sobre** — Breve biografia e filosofia de trabalho
+- **Skills** — Tech stack e competências principais
+- **Projetos** — Trabalhos em destaque com links para GitHub
+- **Contato** — Canais de comunicação
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📬 Vamos Conversar?
 
-## What technologies are used for this project?
+Estou aberto a novas oportunidades e colaborações!
 
-This project is built with:
+- **LinkedIn**: [ricardorohrs](https://linkedin.com/in/ricardorohrs)
+- **GitLab**: [ricardorohrs](https://gitlab.com/ricardoerohrs)
+- **Email**: rerohrs@inf.ufsm.br
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Desenvolvido com ♥ e IA** • [Visite o site](https://ricardorohrs.github.io/portfolio)

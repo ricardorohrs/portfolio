@@ -44,7 +44,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-        <a href="#conteudo" className="font-mono font-bold text-lg" aria-label={t("nav.goTop")}>
+        <a href="#home" className="font-mono font-bold text-lg" aria-label={t("nav.goTop")}>
           <span className="text-primary">&lt;</span>RR
           <span className="text-primary">/&gt;</span>
         </a>
