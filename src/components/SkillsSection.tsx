@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const skillCategories = [
   {
@@ -16,32 +16,41 @@ const skillCategories = [
 ];
 
 const SkillsSection = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section id="skills" className="py-24 px-6 border-t border-border">
+    <section id="skills" aria-labelledby="skills-titulo" className="py-24 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
             // Habilidades
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-mono mt-3">
+          <h2 id="skills-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             Tech Stack<span className="text-primary">.</span>
           </h2>
+          <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
+            Tecnologias e ferramentas que uso no dia a dia para entregar interfaces modernas, APIs
+            consistentes e ambientes de desenvolvimento/produção confiáveis.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-10">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+              whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: ci * 0.15 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : ci * 0.15,
+              }}
             >
               <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase">
                 {`{${cat.title}}`}

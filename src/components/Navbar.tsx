@@ -19,14 +19,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <nav
+      aria-label="Navegação principal"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "glass py-3" : "py-5"
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="font-mono font-bold text-lg">
+        <a href="#home" className="font-mono font-bold text-lg" aria-label="Ir para o topo">
           <span className="text-primary">&lt;</span>RR
           <span className="text-primary">/&gt;</span>
         </a>
@@ -47,6 +56,9 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
+          aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="menu-mobile"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -57,6 +69,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="menu-mobile"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
@@ -41,22 +41,32 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section id="projetos" className="py-24 px-6 border-t border-border">
+    <section
+      id="projetos"
+      aria-labelledby="projetos-titulo"
+      className="py-24 px-6 border-t border-border"
+    >
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
             // Projetos
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-mono mt-3">
+          <h2 id="projetos-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             Trabalhos em destaque<span className="text-primary">.</span>
           </h2>
+          <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
+            Alguns projetos públicos no GitHub com foco em desenvolvimento web, boas práticas e
+            aprendizado contínuo. Clique para ver o repositório e detalhes de implementação.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -66,10 +76,14 @@ const ProjectsSection = () => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              aria-label={`Abrir projeto ${project.name} no GitHub`}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+              whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : i * 0.1,
+              }}
               className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-start justify-between mb-3">

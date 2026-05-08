@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Code2, Globe, Layers } from "lucide-react";
 
 const highlights = [
@@ -20,45 +20,54 @@ const highlights = [
 ];
 
 const AboutSection = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section id="sobre" className="py-24 px-6">
+    <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
             // Sobre mim
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-mono mt-3">
+          <h2 id="sobre-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             Quem sou eu<span className="text-primary">.</span>
           </h2>
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.6,
+            delay: shouldReduceMotion ? 0 : 0.1,
+          }}
           className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-16"
         >
-          Sou Desenvolvedor Full Stack e moro em Porto Alegre, RS. Trabalho construindo
-          soluções web robustas. Formado pela{" "}
-          <span className="text-foreground font-medium">UFSM</span>, tenho experiência com
-          diversas tecnologias e frameworks, sempre buscando criar produtos que fazem a diferença.
+          Sou Desenvolvedor Full Stack em Porto Alegre, RS, com foco em{" "}
+          <span className="text-foreground font-medium">aplicações web</span> e{" "}
+          <span className="text-foreground font-medium">APIs</span> bem estruturadas. Formado pela{" "}
+          <span className="text-foreground font-medium">UFSM</span>, gosto de transformar requisitos em
+          soluções simples, performáticas e fáceis de manter — do backend ao frontend.
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-6">
           {highlights.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+              whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : i * 0.15,
+              }}
               className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300"
             >
               <item.icon className="w-8 h-8 text-primary mb-4 group-hover:drop-shadow-[0_0_8px_hsl(165_80%_48%/0.5)] transition-all" />
