@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ChevronDown, LucideGitlab } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/bg-hero (4).png";
 import { useI18n } from "@/i18n/context";
 
 const socials = [
@@ -21,7 +21,7 @@ const HeroSection = () => {
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       </div>
 

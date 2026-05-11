@@ -85,31 +85,49 @@ const ProjectsSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.1,
               }}
-              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background relative overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="font-mono font-semibold text-lg group-hover:text-primary transition-colors">
-                  {project.name}
-                </h3>
-                <div className="flex gap-2 text-muted-foreground">
-                  <Github className="w-4 h-4 group-hover:text-primary transition-colors" />
-                  <ExternalLink className="w-4 h-4 group-hover:text-primary transition-colors" />
-                </div>
-              </div>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                {t(project.descKey)}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs font-mono px-2 py-1 rounded bg-secondary text-primary/80"
+              {/* Animated background on hover */}
+              <motion.div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)",
+                  opacity: 0.03,
+                }}
+              />
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-mono font-semibold text-lg group-hover:text-primary transition-colors">
+                    {project.name}
+                  </h3>
+                  <motion.div
+                    className="flex gap-2 text-muted-foreground group-hover:text-primary transition-colors"
+                    initial={shouldReduceMotion ? {} : { rotate: 0 }}
+                    whileHover={shouldReduceMotion ? undefined : { rotate: 10 }}
                   >
-                    {t}
-                  </span>
-                ))}
+                    <Github className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
+                  </motion.div>
+                </div>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  {t(project.descKey)}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, ti) => (
+                    <motion.span
+                      key={t}
+                      className="text-xs font-mono px-2 py-1 rounded bg-secondary text-primary/80 group-hover:bg-primary/20 transition-colors"
+                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0.6 }}
+                      whileHover={shouldReduceMotion ? undefined : { opacity: 1, scale: 1.05 }}
+                      transition={shouldReduceMotion ? undefined : { delay: ti * 0.05 }}
+                    >
+                      {t}
+                    </motion.span>
+                  ))}
+                </div>
               </div>
             </motion.a>
           ))}

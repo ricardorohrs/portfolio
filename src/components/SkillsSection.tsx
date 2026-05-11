@@ -52,18 +52,32 @@ const SkillsSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : ci * 0.15,
               }}
+              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+              className="group"
             >
-              <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase">
+              <motion.h3
+                className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase group-hover:text-accent transition-colors"
+                whileHover={shouldReduceMotion ? undefined : { letterSpacing: "0.2em" }}
+              >
                 {`{${cat.title}}`}
-              </h3>
+              </motion.h3>
               <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
-                  <span
+                {cat.skills.map((skill, si) => (
+                  <motion.span
                     key={skill}
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.8 }}
+                    whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: shouldReduceMotion ? 0 : 0.3,
+                      delay: shouldReduceMotion ? 0 : ci * 0.15 + si * 0.05,
+                    }}
+                    whileHover={shouldReduceMotion ? undefined : { scale: 1.1, y: -2 }}
+                    whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
                     className="px-3 py-1.5 rounded-md text-sm font-mono bg-secondary text-secondary-foreground border border-border hover:border-primary/40 hover:text-primary transition-colors duration-200 cursor-default"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>

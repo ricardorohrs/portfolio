@@ -32,6 +32,7 @@ const Navbar = () => {
   const navItems = [
     { label: t("nav.about"), href: "#sobre" },
     { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.freelas"), href: "#freelas" },
     { label: t("nav.projects"), href: "#projetos" },
     { label: t("nav.contact"), href: "#contato" },
   ];
@@ -45,8 +46,13 @@ const Navbar = () => {
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="font-mono font-bold text-lg" aria-label={t("nav.goTop")}>
-          <span className="text-primary">&lt;</span>RR
-          <span className="text-primary">/&gt;</span>
+          <motion.span
+            whileHover={{ scale: 1.35, textShadow: "0 0 20px rgb(26, 188, 156)" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="text-primary">&lt;</span>RR
+            <span className="text-primary">/&gt;</span>
+          </motion.span>
         </a>
 
         {/* Desktop */}
@@ -55,11 +61,15 @@ const Navbar = () => {
             <motion.a
               key={item.label}
               href={item.href}
-              className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.99 }}
+              className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors relative group"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
               {item.label}
+              <motion.div
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                layoutId={item.href}
+              />
             </motion.a>
           ))}
         </div>
@@ -67,8 +77,8 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <motion.button
             type="button"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             onClick={toggleTheme}
             className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors"
             aria-label={resolvedTheme === "dark" ? t("ui.theme.switchToLight") : t("ui.theme.switchToDark")}
@@ -83,8 +93,8 @@ const Navbar = () => {
 
           <motion.button
             type="button"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setLocale(locale === "pt-BR" ? "en" : "pt-BR")}
             className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors"
             aria-label={locale === "pt-BR" ? t("ui.language.switchToEn") : t("ui.language.switchToPt")}
@@ -100,15 +110,39 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button
+        <motion.button
           className="md:hidden text-foreground"
           aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={mobileOpen}
           aria-controls="menu-mobile"
           onClick={() => setMobileOpen(!mobileOpen)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          <AnimatePresence mode="wait">
+            {mobileOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X className="w-6 h-6" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu className="w-6 h-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.button>
       </div>
 
       {/* Mobile menu */}
@@ -119,15 +153,18 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
             className="md:hidden glass border-t border-border"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               <div className="flex items-center gap-2">
-                <button
+                <motion.button
                   type="button"
                   onClick={toggleTheme}
                   title={resolvedTheme === "dark" ? t("ui.theme.darkMode") : t("ui.theme.lightMode")}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors font-mono text-sm text-muted-foreground hover:text-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {resolvedTheme === "dark" ? (
                     <Sun className="w-4 h-4" />
@@ -135,28 +172,34 @@ const Navbar = () => {
                     <Moon className="w-4 h-4" />
                   )}
                   {resolvedTheme === "dark" ? t("ui.theme.lightMode") : t("ui.theme.darkMode")}
-                </button>
+                </motion.button>
 
-                <button
+                <motion.button
                   type="button"
                   onClick={() => setLocale(locale === "pt-BR" ? "en" : "pt-BR")}
                   title={locale === "pt-BR" ? t("ui.language.pt") : t("ui.language.en")}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors font-mono text-sm text-muted-foreground hover:text-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <span aria-hidden="true">{localeFlag[locale]}</span>
                   {locale === "pt-BR" ? "English" : "Português"}
-                </button>
+                </motion.button>
               </div>
 
-              {navItems.map((item) => (
-                <a
+              {navItems.map((item, i) => (
+                <motion.a
                   key={item.label}
                   href={item.href}
-                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary"
                   onClick={() => setMobileOpen(false)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  whileHover={{ x: 4 }}
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>

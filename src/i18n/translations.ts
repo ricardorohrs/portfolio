@@ -5,6 +5,7 @@ type Dictionary = Record<string, Record<Locale, string>>;
 export const translations: Dictionary = {
   "nav.about": { "pt-BR": "Sobre", en: "About" },
   "nav.skills": { "pt-BR": "Skills", en: "Skills" },
+  "nav.freelas": { "pt-BR": "Freelas", en: "Freelances" },
   "nav.projects": { "pt-BR": "Projetos", en: "Projects" },
   "nav.contact": { "pt-BR": "Contato", en: "Contact" },
   "nav.openMenu": { "pt-BR": "Abrir menu", en: "Open menu" },
@@ -92,7 +93,22 @@ export const translations: Dictionary = {
     "pt-BR": "Projeto colaborativo para sistema de cinema.",
     en: "Collaborative project for a cinema system.",
   },
-
+  "freelance.kicker": { "pt-BR": "// Projetos Freelas", en: "// Freelance Projects" },
+  "freelance.title": { "pt-BR": "Clientes e Projetos.", en: "Clients and Projects." },
+  "freelance.subtitle": {
+    "pt-BR":
+      "Clientes e projetos freelancers desenvolvidos com foco em design moderno, usabilidade e performance.",
+    en: "Freelance clients and projects developed with focus on modern design, usability and performance.",
+  },
+  "freelance.openProject": { "pt-BR": "Visitar {{name}}", en: "Visit {{name}}" },
+  "freelance.rmautomotive.desc": {
+    "pt-BR": "Site para empresa de automação e soluções automotivas. Design responsivo com foco em apresentação de serviços.",
+    en: "Website for automotive automation and solutions company. Responsive design focused on service presentation.",
+  },
+  "freelance.sudoeste.desc": {
+    "pt-BR": "Site institucional  para empresa de engenharia. Desenvolvido com foco em gesto de projetos e portfólio.",
+    en: "Institutional website for engineering company. Developed with focus on project management and portfolio.",
+  },
   "contact.kicker": { "pt-BR": "// Contato", en: "// Contact" },
   "contact.title": { "pt-BR": "Vamos conversar?", en: "Let's talk?" },
   "contact.body": {
@@ -103,4 +119,3 @@ export const translations: Dictionary = {
 
   "footer.madeIn": { "pt-BR": "Feito com ♥ em Porto Alegre", en: "Made with ♥ in Porto Alegre" },
 };
-
