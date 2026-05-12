@@ -50,6 +50,8 @@ const ProjectsSection = () => {
       id="projetos"
       aria-labelledby="projetos-titulo"
       className="py-24 px-6 border-t border-border"
+      itemScope
+      itemType="https://schema.org/CollectionPage"
     >
       <div className="max-w-5xl mx-auto">
         <motion.div

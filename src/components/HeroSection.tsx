@@ -19,10 +19,12 @@ const HeroSection = () => {
     <section
       aria-labelledby="hero-titulo"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      itemScope
+      itemType="https://schema.org/Person"
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="Fundo heróico com gradiente para portfólio de desenvolvedor" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       </div>
 
@@ -61,6 +63,7 @@ const HeroSection = () => {
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: shouldReduceMotion ? 0 : 0.15 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight mb-6"
+          itemProp="name"
         >
           Ricardo{" "}
           <span className="text-gradient">Röhrs</span>
@@ -71,6 +74,7 @@ const HeroSection = () => {
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: shouldReduceMotion ? 0 : 0.3 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
+          itemProp="jobTitle"
         >
           {t("hero.summary")}
         </motion.p>

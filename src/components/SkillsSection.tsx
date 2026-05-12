@@ -21,7 +21,7 @@ const SkillsSection = () => {
   const { t } = useI18n();
 
   return (
-    <section id="skills" aria-labelledby="skills-titulo" className="py-24 px-6 border-t border-border">
+    <section id="skills" aria-labelledby="skills-titulo" className="py-24 px-6 border-t border-border" itemScope itemType="https://schema.org/SkillsDocument">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ const SkillsSection = () => {
               whileHover={shouldReduceMotion ? undefined : { y: -4 }}
               className="group"
             >
-              <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase">
+              <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase" itemProp="skills">
                 {`{${cat.title}}`}
               </h3>
 

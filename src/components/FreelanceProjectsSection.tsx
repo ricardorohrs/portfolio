@@ -32,6 +32,8 @@ const FreelanceProjectsSection = () => {
       id="freelas"
       aria-labelledby="freelas-titulo"
       className="py-24 px-6 border-t border-border bg-card/20"
+      itemScope
+      itemType="https://schema.org/CollectionPage"
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -74,8 +76,11 @@ const FreelanceProjectsSection = () => {
               <div className="relative overflow-hidden bg-secondary">
                 <motion.img
                   src={project.image}
-                  alt={`Screenshot do site ${project.name}`}
-                  className="w-full h-full object-cover object-top"
+                  alt={`${project.name} - ${t(project.descKey)}`}
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  className="w-full h-auto object-cover object-top"
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut" }}
                 />

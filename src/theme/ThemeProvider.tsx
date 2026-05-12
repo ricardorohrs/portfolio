@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import { ThemeContext, type ThemeContextValue } from "./context";
+import { ThemeContext } from "./context";
 
 export type Theme = "dark" | "light" | "system";
 
@@ -21,6 +21,14 @@ function applyThemeToDom(resolved: "dark" | "light") {
 }
 
 function getInitialTheme(): Theme {
+  // Check URL parameter first
+  const urlParams = new URLSearchParams(window.location.search);
+  const themeParam = urlParams.get("theme");
+  if (themeParam === "dark" || themeParam === "light" || themeParam === "system") {
+    return themeParam;
+  }
+
+  // Fallback to stored preference or default to dark
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "dark" || stored === "light" || stored === "system") return stored;
   return "system";

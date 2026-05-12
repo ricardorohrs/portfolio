@@ -25,7 +25,7 @@ const AboutSection = () => {
   const { t } = useI18n();
 
   return (
-    <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6 border-t border-border bg-card/20">
+    <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6 border-t border-border bg-card/20" itemScope itemType="https://schema.org/AboutPage">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
@@ -51,6 +51,7 @@ const AboutSection = () => {
             delay: shouldReduceMotion ? 0 : 0.1,
           }}
           className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-16"
+          itemProp="description"
         >
           {t("about.body")}
         </motion.p>

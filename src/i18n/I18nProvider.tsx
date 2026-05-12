@@ -11,6 +11,14 @@ function interpolate(template: string, vars?: Record<string, string>) {
 }
 
 function getInitialLocale(): Locale {
+  // Check URL parameter first
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get("lang");
+  if (langParam === "pt-BR" || langParam === "en") {
+    return langParam;
+  }
+
+  // Fallback to stored preference or navigator language
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "pt-BR" || stored === "en") return stored;
   const nav = navigator.language?.toLowerCase() ?? "";
