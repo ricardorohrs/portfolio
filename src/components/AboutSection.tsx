@@ -50,7 +50,7 @@ const AboutSection = () => {
             duration: shouldReduceMotion ? 0 : 0.6,
             delay: shouldReduceMotion ? 0 : 0.1,
           }}
-          className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-16"
+          className="text-muted-foreground text-lg leading-relaxed max-w-5xl mb-16"
           itemProp="description"
         >
           {t("about.body")}

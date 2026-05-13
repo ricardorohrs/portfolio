@@ -137,13 +137,13 @@ const FreelanceProjectsSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-muted-foreground mb-6">
-            Procurando um desenvolvedor para seu próximo projeto? Vamos conversar!
+            {t("freelance.cta.label")}
           </p>
           <a
             href="#contato"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
           >
-            Solicitar Orçamento
+            {t("freelance.cta.button")}
           </a>
         </motion.div>
       </div>

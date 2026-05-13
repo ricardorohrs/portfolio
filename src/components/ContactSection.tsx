@@ -51,6 +51,8 @@ const ContactSection = () => {
               target="_blank"
               rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               className="group flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary hover:text-primary transition-all duration-300 relative overflow-hidden"
+              aria-label={`Abrir perfil do ${label} em nova aba`}
+              title={label}
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.8 }}
               whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
               viewport={{ once: true }}

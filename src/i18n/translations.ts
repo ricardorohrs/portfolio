@@ -24,8 +24,7 @@ export const translations: Dictionary = {
 
   "hero.role": { "pt-BR": "Desenvolvedor Full Stack", en: "Full Stack Developer" },
   "hero.summary": {
-    "pt-BR":
-      "Desenvolvedor Full Stack apaixonado por construir soluções web modernas e escaláveis.",
+    "pt-BR": "Desenvolvedor Full Stack apaixonado por construir soluções web modernas e escaláveis.",
     en: "Full Stack developer passionate about building modern and scalable web solutions.",
   },
   "hero.location": { "pt-BR": "Porto Alegre, RS — Brasil", en: "Porto Alegre, RS — Brazil" },
@@ -33,9 +32,8 @@ export const translations: Dictionary = {
   "about.kicker": { "pt-BR": "// Sobre mim", en: "// About" },
   "about.title": { "pt-BR": "Quem sou eu.", en: "About me." },
   "about.body": {
-    "pt-BR":
-      "Sou Desenvolvedor Full Stack em Porto Alegre, RS, com foco em aplicações web e APIs bem estruturadas. Formado pela UFSM, gosto de transformar requisitos em soluções simples, performáticas e fáceis de manter — do backend ao frontend.",
-    en: "I'm a Full Stack Developer based in Porto Alegre, Brazil, focused on web applications and well-structured APIs. I graduated from UFSM and enjoy turning requirements into simple, performant, maintainable solutions — from backend to frontend.",
+    "pt-BR": "Sou Desenvolvedor Full Stack com foco em aplicações web e APIs bem estruturadas. Gaúcho, formado pela Universidade Federal de Santa Maria, atualmente moro em Porto Alegre, RS. Com experiência transformando requisitos em soluções simples, performáticas e fáceis de manter — do backend ao frontend.",
+    en: "I am a Full Stack Developer focused on web applications and well-structured APIs. Originally from Rio Grande do Sul, I graduated from the Federal University of Santa Maria and currently live in Porto Alegre, RS. I have experience transforming requirements into simple, high-performance, and easy-to-maintain solutions — from backend to frontend.",
   },
   "about.card.fullstack.title": { "pt-BR": "Full Stack", en: "Full stack" },
   "about.card.fullstack.desc": {
@@ -56,17 +54,15 @@ export const translations: Dictionary = {
   "skills.kicker": { "pt-BR": "// Habilidades", en: "// Skills" },
   "skills.title": { "pt-BR": "Tech Stack.", en: "Tech stack." },
   "skills.subtitle": {
-    "pt-BR":
-      "Tecnologias e ferramentas que uso no dia a dia para entregar interfaces modernas, APIs consistentes e ambientes de desenvolvimento/produção confiáveis.",
-    en: "Technologies and tools I use daily to ship modern interfaces, consistent APIs, and reliable dev/production environments.",
+    "pt-BR": "Principais tecnologias e ferramentas que uso no dia a dia para entregar interfaces modernas, APIs consistentes e ambientes de desenvolvimento/produção confiáveis e eficientes.",
+    en: "Key technologies and tools I use daily to ship modern interfaces, consistent APIs, and reliable and efficient dev/production environments.",
   },
 
   "projects.kicker": { "pt-BR": "// Projetos", en: "// Projects" },
   "projects.title": { "pt-BR": "Trabalhos em destaque.", en: "Featured work." },
   "projects.subtitle": {
-    "pt-BR":
-      "Alguns projetos públicos no GitHub com foco em desenvolvimento web, boas práticas e aprendizado contínuo. Clique para ver o repositório e detalhes de implementação.",
-    en: "A few public GitHub projects focused on web development, best practices and continuous learning. Click to open the repository and implementation details.",
+    "pt-BR": "Alguns repositórios públicos no GitHub com foco em desenvolvimento web, boas práticas e aprendizado contínuo. Clique para ver o repositório e detalhes de implementação.",
+    en: "A few public GitHub repositories focused on web development, best practices and continuous learning. Click to open the repository and implementation details.",
   },
   "projects.openProject": { "pt-BR": "Abrir projeto {{name}} no GitHub", en: "Open {{name}} on GitHub" },
   "projects.appestat.desc": {
@@ -96,10 +92,14 @@ export const translations: Dictionary = {
   "freelance.kicker": { "pt-BR": "// Projetos Freelas", en: "// Freelance Projects" },
   "freelance.title": { "pt-BR": "Clientes e Projetos.", en: "Clients and Projects." },
   "freelance.subtitle": {
-    "pt-BR":
-      "Clientes e projetos freelancers desenvolvidos com foco em design moderno, usabilidade e performance.",
-    en: "Freelance clients and projects developed with focus on modern design, usability and performance.",
+    "pt-BR": "Alguns projetos freelancers de alto impacto para o cliente, desenvolvidos com foco em design moderno, usabilidade e performance. Veja mais ao clicar no projeto!",
+    en: "Some high-impact freelance projects for clients, developed with a focus on modern design, usability, and performance. See more by clicking the project!",
   },
+  "freelance.cta.label": {
+    "pt-BR": "Procurando um desenvolvedor para seu próximo projeto? Vamos conversar!",
+    en: "Looking for a developer for your next project? Let's talk!"
+  },
+  "freelance.cta.button": { "pt-BR": "Solicitar Orçamento", en: "Request Quote" },
   "freelance.openProject": { "pt-BR": "Visitar {{name}}", en: "Visit {{name}}" },
   "freelance.rmautomotive.desc": {
     "pt-BR": "Site para empresa de automação e soluções automotivas. Design responsivo com foco em apresentação de serviços.",
@@ -112,8 +112,7 @@ export const translations: Dictionary = {
   "contact.kicker": { "pt-BR": "// Contato", en: "// Contact" },
   "contact.title": { "pt-BR": "Vamos conversar?", en: "Let's talk?" },
   "contact.body": {
-    "pt-BR":
-      "Estou aberto a novas oportunidades e colaborações. Entre em contato!",
+    "pt-BR": "Estou aberto a novas oportunidades e colaborações. Entre em contato!",
     en: "I am open to new opportunities and collaborations. Get in touch!",
   },
 

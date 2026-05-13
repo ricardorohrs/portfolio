@@ -36,7 +36,7 @@ const SkillsSection = () => {
           <h2 id="skills-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             {t("skills.title")}
           </h2>
-          <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
+          <p className="text-muted-foreground text-lg mt-5 max-w-4xl leading-relaxed">
             {t("skills.subtitle")}
           </p>
         </motion.div>

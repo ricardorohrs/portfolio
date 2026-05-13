@@ -102,6 +102,8 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card/50 backdrop-blur-sm text-secondary-foreground hover:border-primary hover:text-primary transition-all duration-300"
+              aria-label={`Abrir perfil do ${label} em nova aba`}
+              title={label}
             >
               <Icon className="w-5 h-5" />
               <span className="font-mono text-sm">{label}</span>
