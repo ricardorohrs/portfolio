@@ -119,8 +119,9 @@ const HeroSection = () => {
       >
         <motion.a
           href="#sobre"
-          animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
-          transition={shouldReduceMotion ? undefined : { repeat: Infinity, duration: 2 }}
+          animate={ shouldReduceMotion ? undefined : { y: [0, 10, 0], scale: [1, 1.08, 1] } }
+          transition={ shouldReduceMotion ? undefined : { duration: 1.4, repeat: Infinity, ease: "easeInOut" } }
+          className="flex items-center justify-center"
         >
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </motion.a>
