@@ -55,9 +55,15 @@ const SkillsSection = () => {
               whileHover={shouldReduceMotion ? undefined : { y: -4 }}
               className="group"
             >
-              <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase" itemProp="skills">
+              <h3 className="font-mono font-semibold text-primary mb-3 text-sm tracking-wider uppercase" itemProp="skills">
                 {`{${cat.title}}`}
               </h3>
+
+              <p className="text-xs text-muted-foreground mb-4">
+                {cat.title === "Frontend" && "Interfaces modernas e responsivas"}
+                {cat.title === "Backend" && "APIs robustas e escaláveis"}
+                {cat.title === "Ferramentas" && "Desenvolvimento mais eficiente"}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill, si) => (

@@ -49,9 +49,9 @@ const FreelanceProjectsSection = () => {
           <h2 id="freelas-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             {t("freelance.title")}
           </h2>
-          <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
+          <h3 className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
             {t("freelance.subtitle")}
-          </p>
+          </h3>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-6">
           {freelanceProjects.map((project, i) => (
@@ -128,6 +128,24 @@ const FreelanceProjectsSection = () => {
             </motion.a>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-muted-foreground mb-6">
+            Procurando um desenvolvedor para seu próximo projeto? Vamos conversar!
+          </p>
+          <a
+            href="#contato"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
+          >
+            Solicitar Orçamento
+          </a>
+        </motion.div>
       </div>
     </section>
   );

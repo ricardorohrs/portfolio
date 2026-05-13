@@ -42,7 +42,7 @@ const AboutSection = () => {
           </h2>
         </motion.div>
 
-        <motion.p
+        <motion.h3
           initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
           whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -54,7 +54,7 @@ const AboutSection = () => {
           itemProp="description"
         >
           {t("about.body")}
-        </motion.p>
+        </motion.h3>
 
         <div className="grid md:grid-cols-3 gap-6">
           {highlights.map((item, i) => (
